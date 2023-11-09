@@ -1,16 +1,35 @@
-# meals_app
+# Meals App
+  ![License Badge](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
+  ![License Badge](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)
+  ![License Badge](https://img.shields.io/badge/Material--UI-0081CB?style=flat&logo=material-ui&logoColor=white)
+  <br>
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A new Flutter project.
+  ## Description
+  A mobile application that allows users to view cooking instructions, ingredients, and effort levels/duration for a list of locally generated meals. Users have the ability to save meals to their 'favorites' and filter through all available meal options.
+  ## Table of Contents
+  - [Usage](#usage)
+  - [Contribute](#contributing)
+  - [License](#license)
+  - [Questions?](#questions)
 
-## Getting Started
+  ## Usage
+  To use the application, select a food category or click the burger icon at the top left of the app bar to filter and view meanls. Click the 'star' in the top right of the selected meal screen to save to your 'favorites' tab. Click the star again to unfavorite the meal.  
 
-This project is a starting point for a Flutter application.
+  <img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/eec528bd-2c88-4ad1-8b86-1d9ca789b55d" width="300" height="650">
+   <br>
+<img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/03b30525-f965-4a2a-8822-e0e0f53fde57" width="300" height="650">
+   <br>
+<img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/32e94108-8494-41d5-adb6-6c100cb2231a" width="300" height="650">
+   
+  ## License
+  This app is covered under the [MIT License](https://opensource.org/licenses/MIT)<br>
+  Copyright (C) Matthew Delgado 2023
+  ## Contributing
+  Created by: DelgaMatt
+  <br>
+       If you wish to add or contribute to this project, please fork this project repository onto your github account.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  ## Questions
+  View this project repository on [Github](https://github.com/DelgaMatt)<br>
+  If you have any further questions about the application or how you can contribute, you can reach me by email at: matthewrdelgado@gmail.com
