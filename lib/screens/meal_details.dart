@@ -12,6 +12,10 @@ class MealDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final favoriteMeals = ref.watch(favoriteMealsProvider);
+
+    final isFavorite = favoriteMeals.contains(meal);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
@@ -22,13 +26,16 @@ class MealDetailsScreen extends ConsumerWidget {
                 // essentially examining the state of the IconButton once which is within our favorites_provider
                 // "triggering the change from exactly where it happens", ridding us of the chain
                 final wasAdded = ref
-                .read(favoriteMealsProvider.notifier)
-                .toggleMealFavoriteStatus(meal); //called on the result retrieved from read above
+                    .read(favoriteMealsProvider.notifier)
+                    .toggleMealFavoriteStatus(
+                        meal); //called on the result retrieved from read above
                 ScaffoldMessenger.of(context).clearSnackBars();
-                ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(wasAdded ? 'Meal added to favorites' : 'Meal removed from favorites')));
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text(wasAdded
+                        ? 'Meal added to favorites'
+                        : 'Meal removed from favorites')));
               },
-              icon: const Icon(Icons.star))
+              icon: Icon(isFavorite ? Icons.star : Icons.star_border))
         ],
       ),
       body: SingleChildScrollView(
