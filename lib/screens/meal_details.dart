@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meals/providers/favorites_provider.dart';
 
-class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen(
-      {required this.meal, required this.onToggleFavorite, super.key});
+// Consumer widget allows the 'ref' property to be available in tabs
+// we dont have that here so we add the WidgetRef ref property to the build method
+class MealDetailsScreen extends ConsumerWidget {
+  const MealDetailsScreen({required this.meal, super.key});
 
   final Meal meal;
-  final void Function(Meal meal) onToggleFavorite;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
         actions: [
           IconButton(
               onPressed: () {
-                onToggleFavorite(meal);
+                // read will read a value once instead of consistently watching,
+                // essentially examining the state of the IconButton once which is within our favorites_provider
+                // "triggering the change from exactly where it happens", ridding us of the chain
+                final wasAdded = ref
+                .read(favoriteMealsProvider.notifier)
+                .toggleMealFavoriteStatus(meal); //called on the result retrieved from read above
+                ScaffoldMessenger.of(context).clearSnackBars();
+                ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text(wasAdded ? 'Meal added to favorites' : 'Meal removed from favorites')));
               },
               icon: const Icon(Icons.star))
         ],
