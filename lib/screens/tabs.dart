@@ -61,9 +61,8 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     final activeFilters = ref.watch(filtersProvider);
     final availableMeals = meals.where((meal) {
       // suffix '!' to let dart know the value will never be null
-      // and if this meal is NOT glutenFree
+      // ...and if this meal is NOT glutenFree
       if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-        // return nothing
         return false;
       }
       if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {

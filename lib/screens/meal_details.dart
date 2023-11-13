@@ -27,13 +27,14 @@ class MealDetailsScreen extends ConsumerWidget {
                 // "triggering the change from exactly where it happens", ridding us of the chain
                 final wasAdded = ref
                     .read(favoriteMealsProvider.notifier)
-                    .toggleMealFavoriteStatus(
-                        meal); //called on the result retrieved from read above
-                ScaffoldMessenger.of(context).clearSnackBars();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    .toggleMealFavoriteStatus(meal); //called on the result retrieved from read above                ScaffoldMessenger.of(context).clearSnackBars();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
                     content: Text(wasAdded
                         ? 'Meal added to favorites'
-                        : 'Meal removed from favorites')));
+                        : 'Meal removed from favorites'),
+                  ),
+                );
               },
               icon: Icon(isFavorite ? Icons.star : Icons.star_border))
         ],
