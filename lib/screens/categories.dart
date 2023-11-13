@@ -19,6 +19,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   // tells dart it will have a variable when the class is created but not at this exact moment.
   late AnimationController _animationController;
 
+// explicit animation
   @override
   void initState() {
     super.initState();
@@ -80,12 +81,12 @@ class _CategoriesScreenState extends State<CategoriesScreen>
         ),
         builder: (context, child) => 
         SlideTransition(
-          position: _animationController.drive(
+          position:
             Tween(
               begin: const Offset(0, 0.3),
               end: const Offset(0, 0),
-           )), 
-          child: child),
+           ).animate(CurvedAnimation(parent: _animationController, curve: Curves.easeInOut)),
+           child: child), 
         );
   }
 }
