@@ -21,22 +21,31 @@ class MealDetailsScreen extends ConsumerWidget {
         title: Text(meal.title),
         actions: [
           IconButton(
-              onPressed: () {
-                // read will read a value once instead of consistently watching,
-                // essentially examining the state of the IconButton once which is within our favorites_provider
-                // "triggering the change from exactly where it happens", ridding us of the chain
-                final wasAdded = ref
-                    .read(favoriteMealsProvider.notifier)
-                    .toggleMealFavoriteStatus(meal); //called on the result retrieved from read above                ScaffoldMessenger.of(context).clearSnackBars();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(wasAdded
-                        ? 'Meal added to favorites'
-                        : 'Meal removed from favorites'),
-                  ),
-                );
+            onPressed: () {
+              // read will read a value once instead of consistently watching,
+              // essentially examining the state of the IconButton once which is within our favorites_provider
+              // "triggering the change from exactly where it happens", ridding us of the chain
+              final wasAdded = ref
+                  .read(favoriteMealsProvider.notifier)
+                  .toggleMealFavoriteStatus(
+                      meal); //called on the result retrieved from read above                ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(wasAdded
+                      ? 'Meal added to favorites'
+                      : 'Meal removed from favorites'),
+                ),
+              );
+            },
+            // implicit animation - dont have to worry about listening stopping and starting
+            icon: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              transitionBuilder: (child, animation) {
+                return RotationTransition(turns: Tween(begin: 0.8, end: 1.0).animate(animation), child: child);
               },
-              icon: Icon(isFavorite ? Icons.star : Icons.star_border))
+              child: Icon(isFavorite ? Icons.star : Icons.star_border, key: ValueKey(isFavorite),),
+            ),
+          )
         ],
       ),
       body: SingleChildScrollView(

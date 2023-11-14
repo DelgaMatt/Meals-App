@@ -19,7 +19,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   // tells dart it will have a variable when the class is created but not at this exact moment.
   late AnimationController _animationController;
 
-// explicit animation
+// explicit animation-->
   @override
   void initState() {
     super.initState();
@@ -38,6 +38,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
     _animationController.dispose();
     super.dispose();
   }
+  //----------->
 
 // responsible for handling page changes----------
   void _selectedCategory(BuildContext context, Category category) {
