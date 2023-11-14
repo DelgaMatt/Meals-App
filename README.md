@@ -16,11 +16,8 @@
   ## Usage
   To use the application, select a food category or click the burger icon at the top left of the app bar to filter and view meanls. Click the 'star' in the top right of the selected meal screen to save to your 'favorites' tab. Click the star again to unfavorite the meal.  
 
-  <img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/eec528bd-2c88-4ad1-8b86-1d9ca789b55d" width="300" height="650">
-   <br>
-<img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/03b30525-f965-4a2a-8822-e0e0f53fde57" width="300" height="650">
-   <br>
-<img src="https://github.com/DelgaMatt/Expense-Tracker/assets/115049801/32e94108-8494-41d5-adb6-6c100cb2231a" width="300" height="650">
+  <img src="https://github.com/DelgaMatt/Meals-App/assets/115049801/d8e59782-b342-40e4-99de-9a1235dd0409" width="300" height="650">
+
    
   ## License
   This app is covered under the [MIT License](https://opensource.org/licenses/MIT)<br>
