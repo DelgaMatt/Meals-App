@@ -1,7 +1,7 @@
 # Meals App
   ![License Badge](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
   ![License Badge](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)
-  ![pub package](https://img.shields.io/pub/v/riverpod.svg?label=flutter_riverpod&color=black)
+  ![Riverpod](https://img.shields.io/badge/Riverpod-0.14.0-blue.svg)
   ![License Badge](https://img.shields.io/badge/Material--UI-0081CB?style=flat&logo=material-ui&logoColor=white)
   <br>
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
